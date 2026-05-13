@@ -71,7 +71,7 @@ To ensure enterprise-grade scalability and data persistence, this project utiliz
 
 This architecture was specifically engineered to fulfill the **4 core mandates of the Track 2 Lab Lab Hackathon**:
 
-### 1. The Sequential Multi-Agent Architecture
+### 1. The Sequential Multi-Agent Architecture (`agents.py`)
 
 This is not a basic "Chatbot Wrapper" Execution Enforcer utilizes a Supervisor-Worker Pipeline with Deterministic Actuation to ensure speed, cost-efficiency, and 
 zero-hallucination API strikes.
