@@ -6,8 +6,6 @@
 ---
 
 
-
-
 ## 🛑 The Problem
 
 Standard productivity tools (like Todoist, Jira, or Notion) suffer from a fatal structural flaw: **They are entirely passive.** They allow endless rescheduling without consequences. 
@@ -21,7 +19,7 @@ Execution Enforcer is not a task manager. It is an **active compliance engine po
 ## 🎨 What Happens When a User FAILS?
 Execution Enforcer flips the model using **Constructive Friction**. If a user attempts to delay a critical task, the system does not passively accept it. 
 
-1. **The Interception:** The AI stops the rescheduling action.
+1. **The Interception:** The AI Agent stops the rescheduling action.
 
 2. **The Audit:** It securely queries the user's Google Calendar via MCP to prove they have open time blocks.
 
@@ -71,17 +69,31 @@ To ensure enterprise-grade scalability and data persistence, this project utiliz
 
 ## 🎯 Hackathon Core Requirements Execution
 
-This architecture was specifically engineered to fulfill the **4 core mandates of the APAC 2026 Hackathon**:
+This architecture was specifically engineered to fulfill the **4 core mandates of the Track 2 Lab Lab Hackathon**:
 
-### 1. Multi-Agent Coordination (`agents.py`)
+### 1. The Sequential Multi-Agent Architecture
 
-* **Primary Orchestrator:** Routes intent and manages global state.
+This is not a basic "Chatbot Wrapper" Execution Enforcer utilizes a Supervisor-Worker Pipeline with Deterministic Actuation to ensure speed, cost-efficiency, and 
+zero-hallucination API strikes.
 
-* **The Auditor:** Analyzes the database for overdue tasks and procrastination patterns.
+1. The Watcher (Perception Layer)
 
-* **The Strategist:** Breaks complex, stalled tasks into actionable micro-steps.
+   **Brain: Google Gemini 2.5 Flash**
 
-* **The Enforcer:** Handles direct user intervention and excuse-busting.
+Role: High-speed data extraction. It rapidly parses user telemetry, categorizes failure excuses (e.g., "Laziness", "Technical Blocker"), and reads historical 
+context. Flash is utilized here for maximum speed and token efficiency on basic NLP tasks.
+
+2. The Judge (Cognition Layer)
+
+   **Brain: Google Gemini 2.5 Pro**
+
+Role: Heavy enterprise reasoning. It ingests the clean state from the Watcher, applies strict Zero-Trust Accountability policies, detects sprint drift, and calculates penalty hours. Pro is utilized because complex compliance evaluation requires deep contextual logic.
+
+3. The Executioner (Actuation Layer)
+
+   **Brain: Pure Deterministic Python**
+
+Role: The hands of the system. We deliberately isolated this from the LLMs to prevent hallucinated API calls. It reads the JSON verdict from the Judge and safely mutates external infrastructure via MCP (Model Context Protocol).
 
 ### 2. MCP (Model Context Protocol) Tool Integration (`mcp_layer.py`)
 
@@ -105,7 +117,7 @@ The AI does not operate in a solo. It interfaces with the actual workspace:
 
 ## 💻 Technical Stack
 
-* **AI Engine:** Google Vertex AI (Gemini 2.5 Pro)
+* **AI Engine:** Gemini 2.5 Pro -- Cognition Layer & Gemini 2.5 Flash -- Perception Layer
   
 * **Cloud Infrastructure:** Google Cloud Platform (Cloud Run, Firebase Hosting)
 
