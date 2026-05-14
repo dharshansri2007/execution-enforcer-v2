@@ -126,7 +126,7 @@ export default function Login() {
               ENFORCER v2
             </h2>
             <p className="text-gray-400 text-[10px] tracking-[0.2em] uppercase font-bold px-4 leading-relaxed">
-              Made for Gen AI APAC Hackathon '26
+              Made for Lab Lab Track Hackathon '26
             </p>
           </div>
 
